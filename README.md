@@ -25,7 +25,7 @@ We are additionally required to document our work to a high standard and to pres
 # Key Deliverables
 ​
 The Key Deliverables for this project are outlined in the following document:
-[An Internal Link](/KEY_DELIVERABLES.md)
+[Key Deliverables](/key_deliverables.md)
 
 
 Throughout this project, every attempt has been made to adhere to these requirements.
