@@ -1,6 +1,0 @@
-[submodule "spring-petclinic-rest-fork"]
-	path = spring-petclinic-rest
-	url = https://github.com/DHayes23/spring-petclinic-rest.git
-[submodule "spring-petclinic-angular-fork"]
-	path = spring-petclinic-angular
-	url = https://github.com/DHayes23/spring-petclinic-angular
