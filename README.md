@@ -5,7 +5,7 @@
 
 This project aims to deliver a fully functional, cloud based version of the Petclinic application. As per the project brief, in delivering on these aims we are to use the tools and workflows covered during our training to achieve the final goal.
 
-We are additionally required to document our work to a high standard and to present 
+We are additionally required to document our work to a high standard and to present the final deliverable to an audience of stakeholders and assessors.
 
 # Team Members
 * Josip Kules
@@ -21,6 +21,7 @@ We are additionally required to document our work to a high standard and to pres
   * [Key Deliverables](#key-deliverables)
   * [User Stories](#user-stories)
   * [Availability of Application](#availability-of-application)
+  * [Auto Scaling of Resources](#auto-scaling-of-resources)
   * [Acknowledgements](#acknowledgements)
 ​​
 # Key Deliverables
@@ -71,9 +72,17 @@ In order to best serve the expected needs and use-cases of the Petclinic applica
 
 We have provisioned replicated resources in two AZs within the same region, thereby protecting the application from outages or disasters in a single data center. We are of the opinion that this is the correct level of availability to apply to the Petclinic application, as the chances of both AZs being disabled is acceptably low. 
 
-Provisioning resources on a Regional scale would, in this case, be overkill. As the application manages the bookings of a local veterinary clinic, reaching a global audience  is not a major concern. 
+Provisioning resources on a Regional scale would, in this case, is not necessary. As the application manages the bookings of a local veterinary clinic, reaching a global audience  is not a major concern. 
 
 In order to provide the solution with the greatest cost-benefit efficiency, we have determined that a two AZ approach is optimal. For further information on costing, please see the Cost Analysis section.
+
+# Auto-Scaling of Resources
+
+Auto-Scaling refers to the dynamic adjustment of computational resources in response to increasing or decreasing load. 
+
+AWS simplifies the process of automatically provisioning new resources when they are needed, through the use of Auto-Scaling groups and Launch Templates. These tools allow an engineer to configure resources as appropriate for the application in question.
+
+Due to the size and nature of the Petclinic application and its expected userbase, we have determined that including auto-scaling features in this solution is not necessary. Through the use of a multi AZ setup with duplicated resources, the application should have more than sufficient compute power in its base configuration.
 
 # Risk Assessment
 ​
