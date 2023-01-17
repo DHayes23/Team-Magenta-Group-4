@@ -1,0 +1,110 @@
+Resources:
+  InstanceBackend:
+    Type: AWS::EC2::Instance
+    Properties:
+      KeyName: AMSKey
+      ImageId: ami-029cfca952b331b52
+      InstanceType: t2.micro
+      UserData:
+        Fn::Base64: 
+          !Sub |
+            #!/bin/bash
+            apt-get update -y
+            apt-get install default-jre -y
+            snap install docker
+            apt-get install nodejs npm -y
+            npm install -g @angular/cli@11.2.11 -y
+      Tags:
+        - Key: "Name"
+          Value: "Backend"
+      SecurityGroups:
+        - !Ref AllowSSH
+        - !Ref AllowHTTP
+
+
+  InstanceFrontend:
+    Type: AWS::EC2::Instance
+    Properties:
+      KeyName: AMSKey
+      ImageId: ami-029cfca952b331b52
+      InstanceType: t2.micro
+      UserData:
+        Fn::Base64: 
+          !Sub |
+            #!/bin/bash
+            apt-get update -y
+            apt-get install default-jre -y
+            snap install docker
+            apt-get install nodejs npm -y
+            npm install -g @angular/cli@11.2.11 -y
+      Tags:
+        - Key: "Name"
+          Value: "Frontend"
+      SecurityGroups:
+        - !Ref AllowSSH
+        - !Ref AllowHTTP
+
+
+  InstanceDatabase:
+    Type: AWS::EC2::Instance
+    Properties:
+      KeyName: AMSKey
+      ImageId: ami-029cfca952b331b52
+      InstanceType: t2.micro
+      UserData:
+        Fn::Base64: 
+          !Sub |
+            #!/bin/bash
+            apt-get update -y
+            apt-get install default-jre -y
+            snap install docker
+            apt-get install nodejs npm -y
+            npm install -g @angular/cli@11.2.11 -y
+      Tags:
+        - Key: "Name"
+          Value: "Database"
+      SecurityGroups:
+        - !Ref AllowSSH
+        - !Ref AllowHTTP
+
+  InstanceNGINX:
+    Type: AWS::EC2::Instance
+    Properties:
+      KeyName: AMSKey
+      ImageId: ami-029cfca952b331b52
+      InstanceType: t2.micro
+      UserData:
+        Fn::Base64: 
+          !Sub |
+            #!/bin/bash
+            apt-get update -y
+            apt-get install default-jre -y
+            snap install docker
+            apt-get install nodejs npm -y
+            npm install -g @angular/cli@11.2.11 -y
+      Tags:
+        - Key: "Name"
+          Value: "NGINX"
+      SecurityGroups:
+        - !Ref AllowSSH
+        - !Ref AllowHTTP
+
+  AllowSSH:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Enable SSH access
+      SecurityGroupIngress:
+        IpProtocol: tcp
+        FromPort: '22'
+        ToPort: '22'
+        CidrIp: 0.0.0.0/0
+
+  AllowHTTP:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Enable HTTP access
+      SecurityGroupIngress:
+        IpProtocol: tcp
+        FromPort: '80'
+        ToPort: '80'
+        CidrIp: 0.0.0.0/0
