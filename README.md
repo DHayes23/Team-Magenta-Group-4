@@ -20,6 +20,7 @@ We are additionally required to document our work to a high standard and to pres
   * [Introduction](#introduction)
   * [Key Deliverables](#key-deliverables)
   * [User Stories](#user-stories)
+  * [Choice of Tools and Services](#choice-of-tools-and-services)
   * [Availability of Application](#availability-of-application)
   * [Auto Scaling of Resources](#auto-scaling-of-resources)
   * [Acknowledgements](#acknowledgements)
