@@ -1,13 +1,13 @@
-# Team Magenta Group 4 - Petclinic Automated Cloud Solution
+# **Team Magenta Group 4 - Petclinic Automated Cloud Solution**
 
 
-# Introduction
+# **Introduction**
 
 This project aims to deliver a fully functional, cloud based version of the Petclinic application. As per the project brief, in delivering on these aims we are to use the tools and workflows covered during our training to achieve the final goal.
 
 We are additionally required to document our work to a high standard and to present the final deliverable to an audience of stakeholders and assessors.
 
-# Team Members
+# **Team Members**
 * Josip Kules
 * Maggie Walsh
 * Godspower Olasupo
@@ -15,7 +15,7 @@ We are additionally required to document our work to a high standard and to pres
 * Denis Hayes
 
 ​
-# Table of Contents
+# **Table of Contents**
 
   * [Introduction](#introduction)
   * [Key Deliverables](#key-deliverables)
@@ -24,7 +24,7 @@ We are additionally required to document our work to a high standard and to pres
   * [Auto Scaling of Resources](#auto-scaling-of-resources)
   * [Acknowledgements](#acknowledgements)
 ​​
-# Key Deliverables
+# **Key Deliverables**
 ​
 The Key Deliverables for this project are outlined in the following document:
 [Key Deliverables](/key_deliverables.md)
@@ -33,9 +33,9 @@ The Key Deliverables for this project are outlined in the following document:
 Throughout this project, every attempt has been made to adhere to these requirements.
 ​
 
-# User Stories
+# **User Stories**
 
-## Owner:
+## **Owner:**
 As an owner:
 
 * I want an easy to use, cost-effective solution.
@@ -43,19 +43,113 @@ As an owner:
 * I want it to be easy for my developers and engineers to work on the codebase, should changes be required.
 * I want all of the data passing through my application and stored in my database to be safe from intrusion.
 * I want all of the valuable data collected by the application to be backed-up to ensure that, in the event of a disaster, the data is retained.
-## Developer:
+## **Developer:**
 As a developer:
 * I want to have a development environment which is separate from the production environment, so that I can make experimental changes without affecting the customer experience.
 * I want to ensure that the databases are fully functional so they can store, add and delete information.
 * I want a new pipeline to automatically initiate every time I make a deployment.
 * I want the pipeline to produce logs to assist me in debugging the application.
-## Engineer:
+## **Engineer:**
 As an engineer:
 * I want to ensure that the application runs smoothly, regardless of the amount of traffic.
 * I want the application to be easy to understand and replicate so it can be reproduced again when needed.
 * I want to have a detailed set of logs to monitor and review the application for management and maintenance.
 
-# Availability of Application
+
+# **Choice of Tools and Services**
+
+Throughout this project, we have had to make several decisions regarding which tools and services to use. Many of the different stages of our solution could be achieved using a number of similar tools; we were required to select the tool that would serve our needs best. We have listed a number of these decisions and their rationale below, with an aim to provide clarity on alternative options and our reasoning.
+
+---
+
+## **Version Control System (VCS)**
+### Competing Options:
+ * ### GitHub/Git
+ * ### CodeCommit by AWS
+---
+A version control system is used to store and organise the source code of a solution/application within a 'repository'. Using the same repository allows any number of developers to work together on the same code base, having a 'single source of truth' to ensure that everyone is clear on the current state of the code.
+
+While initially we planned to use CodeCommit, we quickly realised that due to the access controls in place on our AWS accounts that the team would not be able to collaborate with one another, thereby eliminating the AWS offering from contention. 
+
+Being unable to use CodeCommit pushed us towards the use of GitHub. Thankfully, as a team we are very familiar with GitHub. 
+
+The tools offered by GitHub, such as easily adding collaborators to a repository and a simplified branching system, allowed us to start our work together quickly and efficiently.
+
+Additionally, GitHub integrates nicely with AWS, being a selectable option in all services where one can specify a VCS.
+
+### Choice: **GitHub**
+
+---
+
+## **Kanban Software**
+### Competing Options:
+ * ### Trello
+ * ### Jira
+---
+In order to effectively track our product and sprint backlogs, we required a suite of Kanban tools. Kanban is a framework used within Agile to visually represent the work that must be done, is being done and has been done on a 'Kanban Board'. Using this method, a team can easily keep track of all of a project's major tasks.
+
+There are several software based solutions available to teams wanting to implement Kanban. The two with which our team were most familiar were Jira and Trello.
+
+Jira arguably offers the most complete and rich set of Kanban tools, providing a level of granularity which other suites do not. In the view of our team, these extra features were not necessary on a project with such a short time-frame as this one, and could actually impede progress.
+
+Trello, on the other hand is a more lightweight offering. The reduced offering from Trello in this case is actually its greatest strength. As a team with basic task tracking needs, Trello was easy to set up and easy to maintain. Within 10 minutes we were able to configure the software and add everyone to the workspace.
+
+### Choice: **Trello**
+
+---
+
+## **Containerisation Tool**
+### Competing Options:
+ * ### Docker
+---
+To successfully build our solution, we were required to successfully run a pipeline. Running this pipeline required us to containerise the different elements of the Petclinic application. 
+
+Docker allowed us to containerise the elements of the Petclinic application and push them to AWS' Elastic Container Registry.
+
+Docker Compose and Docker Swarm allowed us to manage the orchestration of multiple containers, meaning that we were able to have several containers on different EC2 instances communicating with each other.
+
+As our training has covered Docker, and not yet an alternative option such as Kubernetes, we were limited in our options for which service to use. As such, Docker was the sole candidate for use in this project.
+
+### Choice: **Docker**
+
+---
+
+## **Ifrastructure as Code (IaC) Tools**
+### Competing Options:
+* ### Terraform
+* ### CloudFormation
+---
+In order to provide a working solution, we were required to create AWS infrastructure to host our containers. There are a number of tools which allow a user to bypass the manual creation step and to programmatically implement the provisioning of resources. This approach is known as 'Infrastructure as Code'.
+
+We have had training in the use of both Terraform and CloudFormation(AWS' IaC offering), and so we were required to make a decision on which tool to use for this project.
+
+CloudFormation is an AWS specific IaC tool, meaning that it can only be used with the AWS cloud and its services. As a result of its narrow focus, CloudFormation is heavily integrated with other AWS services. The high quality documentation produced by Amazon also improves the engineering experience. 
+
+Terraform is a platform-agnostic IaC tool, meaning that it can be used with most cloud providers, including AWS. Due to this tool's multi-cloud capabilities, it is not as closely integrated with the one-note Cloudformation.
+
+To achieve our solution, we planned have planned to use exclusively AWS provided resources. Taking this fact into consideration, coupled with the ease of use of CloudFormation, and our decision was clear.
+
+### Choice: **Cloudformation**
+
+---
+
+## **Pipeline Tool**
+### Competing Options:
+* ### Jenkins
+* ### CodePipeline
+---
+
+In order to create a fully enclosed CI/CD pipeline, we were required to choose a service which could perform the required tasks that this calls for. By creating a pipeline, a user can automate their releases upon a push being made to a code repository. This simplifies the overall deployment process and ensures that key build tasks are completed every time new code is pushed.
+
+CodePipeline is an AWS offering which has full integration with other AWS services. This fully managed service is operated through the AWS GUI or the AWS CLI, and is designed to guide the user through the steps required to utilise the pipeline.
+
+Jenkins is a an alternative, open source automation server. In the same way as AWS CodePipeline, Jenkins guides the user through the pipeline setup process. 
+
+In general, we have tried to stick to using AWS services thorughout this project, and due to its built-in integration with AWS services, we chose to use CodePipeline.
+
+### Choice: **CodePipeline**
+
+# **Availability of Application**
 When discussing cloud-based applications, a key concern is that of 'Availability'. 
 
 Availability, in the context of a web application, can be reductively defined as 'The percentage of time during which the application is assessible and reachable by its intended audience.
@@ -76,7 +170,7 @@ Provisioning resources on a Regional scale would, in this case, is not necessary
 
 In order to provide the solution with the greatest cost-benefit efficiency, we have determined that a two AZ approach is optimal. For further information on costing, please see the Cost Analysis section.
 
-# Auto-Scaling of Resources
+# **Auto-Scaling of Resources**
 
 Auto-Scaling refers to the dynamic adjustment of computational resources in response to increasing or decreasing load. 
 
@@ -84,14 +178,14 @@ AWS simplifies the process of automatically provisioning new resources when they
 
 Due to the size and nature of the Petclinic application and its expected userbase, we have determined that including auto-scaling features in this solution is not necessary. Through the use of a multi AZ setup with duplicated resources, the application should have more than sufficient compute power in its base configuration.
 
-# Risk Assessment
+# **Risk Assessment**
 ​
-# Technologies Used
+# **Technologies Used**
 
-# Acknowledgements
+# **Acknowledgements**
 
-We would like to thank Deloitte and the members of the Cloud Engineering team for their support, and for kindly hosting us on various occasions throughout our training.
+We would like to thank **Deloitte** and the members of the Cloud Engineering team for their support, and for kindly hosting us on various occasions throughout our training.
 
-We would like to thank AMS and the team there for their constant support and guidance.
+We would like to thank **AMS** and the team there for their constant support and guidance.
 
-We would like to thank QA and the training team for providing us with the skills required to complete this project.
+We would like to thank **QA** and the training team for providing us with the skills required to complete this project.
