@@ -1,0 +1,44 @@
+#needs work
+version: '3.7'
+services:
+  nginx:
+    container_name: nginx
+    image: nokdev/nginx:latest
+    ports:
+      - "80:80"
+    networks:
+      - pc-networkp
+  #port issue with nginx container and frontend nginx
+  frontend:
+    container_name: frontend
+    build: ./spring-petclinic-angular
+    image: nokdev/petclinicangular:latest
+    ports:
+      - "8080:8080"
+    networks:
+      - pc-network
+    depends_on:
+      - "backend"
+  backend:
+    container_name: backend
+    build: ./spring-petclinic-rest
+    image: nokdev/petclinicrest:latest
+    ports:
+      - "9966:9966"
+    networks:
+      - pc-network
+    volumes:
+      - db-volume
+  mysql:
+    container_name: petclinic-db
+    image: nokdev/petclinicdb:latest
+    ports:
+      - "3306:3306"
+
+volumes:
+  db-volume:
+#add types and tag
+  nginx:
+
+networks:
+  pc-network:
