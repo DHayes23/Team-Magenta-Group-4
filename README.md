@@ -24,6 +24,7 @@ We are additionally required to document our work to a high standard and to pres
   * [Choice of Tools and Services](#choice-of-tools-and-services)
   * [Availability of Application](#availability-of-application)
   * [Auto Scaling of Resources](#auto-scaling-of-resources)
+  * [Cost Analysis](#cost-analysis)
   * [Acknowledgements](#acknowledgements)
 ​​
 # **Key Deliverables**
@@ -192,6 +193,40 @@ Auto-Scaling refers to the dynamic adjustment of computational resources in resp
 AWS simplifies the process of automatically provisioning new resources when they are needed, through the use of Auto-Scaling groups and Launch Templates. These tools allow an engineer to configure resources as appropriate for the application in question.
 
 Due to the size and nature of the Petclinic application and its expected userbase, we have determined that including auto-scaling features in this solution is not necessary. Through the use of a multi AZ setup with duplicated resources, the application should have more than sufficient compute power in its base configuration.
+
+# **Cost Analysis**
+
+We have approached this project with the overall cost to the client firmly in mind. 
+
+As with almost all cloud-based solutions, the solution that we have presented will cost the client significantly less to run than it would the same resources on premises. 
+
+Utilising cloud technology allows for a number of cost based advantages. Our client can avail of on-demand billing (only paying for what you use), trading of capital expenditure for operational expenditure and the price benefits that come from the massive economies of scale associated with cloud solutions.
+
+Based on our estimations, the client will require at least 3 EC2 Instances within a single Availability Zone. If the client wishes to improve the availability of their application, they could double the provisioned resources.
+
+We have used other resources provided by AWS, however they are, in these use cases, free to use and so will not incur any additional charge.
+
+We have based our projections on the client operating their application 24/7, which we feel is appropriate as their users may need to access the application at any time.
+
+We would recommend that the client utilises Reserved EC2 instances in this case, as they have a predictable, long-term workload.
+
+All costs in USD($).
+
+
+Reserved EC2 T.2 Micro Hourly Cost:
+* 0.0036
+
+Daily Cost Per T.2 Micro Instance:
+* 0.0864
+
+Annual Cost Per T.2 Micro Instance:
+* 31.4496
+
+Total Annual Cost for 3 Instances:
+* 94.3488
+
+Total Annual Cost for 6 Instances(Improved Availability Option): 
+* 188.6976
 
 # **Acknowledgements**
 
