@@ -204,6 +204,8 @@ Utilising cloud technology allows for a number of cost based advantages. Our cli
 
 Based on our estimations, the client will require at least 3 EC2 Instances within a single Availability Zone. If the client wishes to improve the availability of their application, they could double the provisioned resources.
 
+An additional small charge exists per (Active) pipeline.
+
 We have used other resources provided by AWS, however they are, in these use cases, free to use and so will not incur any additional charge.
 
 We have based our projections on the client operating their application 24/7, which we feel is appropriate as their users may need to access the application at any time.
@@ -212,6 +214,8 @@ We would recommend that the client utilises Reserved EC2 instances in this case,
 
 All costs in USD($).
 
+Monthly Cost Per (Active) Pipeline: 
+* 1.00
 
 Reserved EC2 T.2 Micro Hourly Cost:
 * 0.0036
