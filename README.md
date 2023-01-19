@@ -20,6 +20,7 @@ We are additionally required to document our work to a high standard and to pres
   * [Introduction](#introduction)
   * [Key Deliverables](#key-deliverables)
   * [User Stories](#user-stories)
+  * [Risk Assessment - Sample](#risk-assessment)
   * [Choice of Tools and Services](#choice-of-tools-and-services)
   * [Availability of Application](#availability-of-application)
   * [Auto Scaling of Resources](#auto-scaling-of-resources)
@@ -55,6 +56,19 @@ As an engineer:
 * I want to ensure that the application runs smoothly, regardless of the amount of traffic.
 * I want the application to be easy to understand and replicate so it can be reproduced again when needed.
 * I want to have a detailed set of logs to monitor and review the application for management and maintenance.
+
+
+# **Risk Assessment**
+A comprehensive Risk Assessment was carried out and updated throughout the project. 
+
+Please find the full Risk Assessment within this repository.
+
+A sample of the Risk Assessment is available below:
+
+![Risk Assessment Sample](Risk_Assessment_Sample_Image.png)
+
+
+
 
 
 # **Choice of Tools and Services**
