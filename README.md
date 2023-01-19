@@ -27,6 +27,8 @@ We are additionally required to document our work to a high standard and to pres
   * [Auto Scaling of Resources](#auto-scaling-of-resources)
   * [Cost Analysis](#cost-analysis)
   * [Acknowledgements](#acknowledgements)
+  * [Application Testing](#application-testing)
+
 ​​
 # **Key Deliverables**
 ​
@@ -246,6 +248,21 @@ Total Annual Cost for 3 Instances:
 
 Total Annual Cost for 6 Instances(Improved Availability Option): 
 * 188.6976
+
+# **Application Testing**
+
+Following our successful running of the application, we ran the application tests.
+
+The tests covered the majority of the codebase, testing each element of the application thoroughly. 
+
+![Application Test 1](TestingScreenshot1.png)
+
+43 of the tests passed, presenting no failures.
+
+![Application Test 2](TestingScreenshot2.png)
+Once all of the tests ran successfully, we were able to access the application using a web-browser.
+
+![Application Test 3](TestingScreenshot3.png)
 
 # **Acknowledgements**
 
