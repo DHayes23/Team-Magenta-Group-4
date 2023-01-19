@@ -22,6 +22,7 @@ We are additionally required to document our work to a high standard and to pres
   * [User Stories](#user-stories)
   * [Risk Assessment - Sample](#risk-assessment)
   * [Choice of Tools and Services](#choice-of-tools-and-services)
+  * [Planned Infrastructure](#planned-infrastructure)
   * [Availability of Application](#availability-of-application)
   * [Auto Scaling of Resources](#auto-scaling-of-resources)
   * [Cost Analysis](#cost-analysis)
@@ -164,6 +165,20 @@ Jenkins is a an alternative, open source automation server. In the same way as A
 In general, we have tried to stick to using AWS services thorughout this project, and due to its built-in integration with AWS services, we chose to use CodePipeline.
 
 ### Choice: **CodePipeline**
+
+# **Planned Infrastructure**
+
+Revisions to our infrastructure have led to a reduced number of resources being provisioned as compared with our initial plan. 
+
+The following image represents the original planned infrastructure for each AZ:
+
+![Infrastructure Diagram](InfrastructureDiagram.png)
+
+While initially the plan was to deploy 4 separate EC2 instances, this decision was later revised. The existing solution requires 3 linked EC2 instances.
+
+If the client so chooses, a further 3 instances could be provisioned in the same AWS Region, but in a different AZ in order to increase the availability of the application. 
+
+Taking such an approach would incur additional costs, for the benefit of a more robust solution.
 
 # **Availability of Application**
 When discussing cloud-based applications, a key concern is that of 'Availability'. 
