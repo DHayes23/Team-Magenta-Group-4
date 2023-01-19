@@ -193,10 +193,6 @@ AWS simplifies the process of automatically provisioning new resources when they
 
 Due to the size and nature of the Petclinic application and its expected userbase, we have determined that including auto-scaling features in this solution is not necessary. Through the use of a multi AZ setup with duplicated resources, the application should have more than sufficient compute power in its base configuration.
 
-# **Risk Assessment**
-​
-# **Technologies Used**
-
 # **Acknowledgements**
 
 We would like to thank **Deloitte** and the members of the Cloud Engineering team for their support, and for kindly hosting us on various occasions throughout our training.
